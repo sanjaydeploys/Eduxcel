@@ -16,7 +16,7 @@
     },
     {
       "source": "/",
-      "destination": "https://pkn6bino32.execute-api.ap-south-1.amazonaws.com/prod"
+      "destination": "https://vdpewlgw50.execute-api.ap-south-1.amazonaws.com/prod/test"
     },
     
     {
