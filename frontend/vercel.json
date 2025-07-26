@@ -1,14 +1,38 @@
 {
+  "version": 2,
+  "builds": [
+    { "src": "public/**/*", "use": "@vercel/static" },
+    { "src": "build/**/*", "use": "@vercel/static" }
+  ],
+  "rewrites": [
+   
+    {
+      "source": "/public/:path*",
+      "destination": "/:path*"
+    },
+    {
+      "source": "/sanjay-portfolio-heroImage.webp",
+      "destination": "/public/sanjay-portfolio-heroImage.webp"
+    },
+    {
+      "source": "/",
+      "destination": "https://gj48940cgb.execute-api.ap-south-1.amazonaws.com/prod"
+    },
+    
+    {
+      "source": "/((?!.*\\.(?:ico|png|jpg|jpeg|webp|gif|svg|js|css|woff2?|ttf|eot|otf|mp4|mp3|txt|xml|json)).*)",
+      "destination": "/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "Expect-CT",
-          "value": "max-age=0"
+       {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; connect-src 'self' https://gj48940cgb.execute-api.ap-south-1.amazonaws.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://sanjay-patidar.vercel.app https://streetviewpixels-pa.googleapis.com https://d12uvtgcxr5qif.cloudfront.net https://maps.googleapis.com https://cdn.svgporn.com https://raw.githubusercontent.com https://d1.awsstatic.com; font-src 'self' data:; frame-src 'self' https://*.google.com https://streetviewpixels-pa.googleapis.com;"
         }
       ]
     }
-  ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  ]
 }
