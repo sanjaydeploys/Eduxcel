@@ -23,6 +23,10 @@
       "destination": "https://vdpewlgw50.execute-api.ap-south-1.amazonaws.com/prod/careers"
     },
     {
+      "source": "/careers/aws",
+      "destination": "https://vdpewlgw50.execute-api.ap-south-1.amazonaws.com/prod/careers/aws"
+    },
+    {
       "source": "/((?!.*\\.(?:ico|png|jpg|jpeg|webp|gif|svg|js|css|woff2?|ttf|eot|otf|mp4|mp3|txt|xml|json)).*)",
       "destination": "/index.html"
     }
