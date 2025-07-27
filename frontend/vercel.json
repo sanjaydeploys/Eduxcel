@@ -5,7 +5,14 @@
     { "src": "build/**/*", "use": "@vercel/static" }
   ],
   "rewrites": [
-   
+    {
+      "source": "/robots.txt",
+      "destination": "https://vdpewlgw50.execute-api.ap-south-1.amazonaws.com/prod/robots.txt"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "https://vdpewlgw50.execute-api.ap-south-1.amazonaws.com/prod/sitemap.xml"
+    },
     {
       "source": "/public/:path*",
       "destination": "/:path*"
